@@ -15,5 +15,5 @@ sha256sums=('SKIP')
 
 package() {
 	cd "dmenu-exitMenu-${pkgver}"
-	install -Dm755 "target/release/dmenu-exitMenu" "$pkgdir/usr/local/bin/dmenu-exitMenu"
+	install -Dm755 "dmenu-exitMenu.bash" "$pkgdir/usr/local/bin/dmenu-exitMenu"
 }

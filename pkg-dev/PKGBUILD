@@ -1,6 +1,6 @@
 # Maintainer: Lukas Heindl <oss.heindl@protonmail.com>
 pkgname=dmenu-exitMenu-dev
-pkgver=67b130a
+pkgver=0981394
 pkgrel=1
 pkgdesc="A simple exitMenu using dmenu built from git dev"
 arch=('x86_64')
@@ -20,5 +20,5 @@ pkgver() {
 
 package() {
 	cd "${pkgname}"
-	install -Dm755 "target/release/dmenu-exitmenu" "$pkgdir/usr/local/bin/dmenu-exitMenu"
+	install -Dm755 "dmenu-exitMenu.bash" "$pkgdir/usr/local/bin/dmenu-exitMenu"
 }
