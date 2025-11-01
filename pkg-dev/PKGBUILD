@@ -1,0 +1,24 @@
+# Maintainer: Lukas Heindl <oss.heindl@protonmail.com>
+pkgname=dmenu-exitMenu-dev
+pkgver=0981394
+pkgrel=1
+pkgdesc="A simple exitMenu using dmenu built from git dev"
+arch=('x86_64')
+url="https://github.com/atticus-sullivan/dmenu-exitMenu"
+license=('MIT')
+makedepends=('git' 'cargo')
+provides=("dmenu-exitMenu")
+conflicts=("dmenu-exitMenu")
+optdepends=('dmenu: can also be installed manually')
+source=("${pkgname}::git+${url}.git#branch=dev")
+sha256sums=('SKIP')
+
+pkgver() {
+	cd "${pkgname}"
+	git rev-parse --short HEAD
+}
+
+package() {
+	cd "${pkgname}"
+	install -Dm755 "dmenu-exitMenu.bash" "$pkgdir/usr/local/bin/dmenu-exitMenu"
+}
